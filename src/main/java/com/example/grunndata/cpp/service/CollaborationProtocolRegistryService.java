@@ -74,27 +74,28 @@ public class CollaborationProtocolRegistryService {
      * @param cpaId String
      * @return CollaborationProtocolProfileModel
      */
-    public Optional<CollaborationProtocolProfileModel> getAgreementById(
-            String cpaId, Integer herId) {
+    public Optional<CollaborationProtocolProfileModel> getAgreementById(String cpaId, Integer herId) {
 
         CollaborationProtocolAgreement protocolAgreement =
                 collaborationProtocolRegistrySoapService.getCpaForCommunicationPartyByCpaId(cpaId);
-        List<Packaging> packagings = protocolAgreement.getPackaging();
-        List<SimplePart> simplePart = protocolAgreement.getSimplePart();
+        if (protocolAgreement != null) {
+            List<Packaging> packagings = protocolAgreement.getPackaging();
+            List<SimplePart> simplePart = protocolAgreement.getSimplePart();
 
-        PartyInfo partyInfo = getPartyInfo(herId, protocolAgreement);
+            PartyInfo partyInfo = getPartyInfo(herId, protocolAgreement);
 
-        if (partyInfo != null) {
-            Integer counterpartyHerId =
-                    partyInfo.getPartyId().stream()
-                            .map(PartyId::getValue)
-                            .map(Integer::parseInt)
-                            .findAny()
-                            .orElse(null);
+            if (partyInfo != null) {
+                Integer counterpartyHerId =
+                        partyInfo.getPartyId().stream()
+                                .map(PartyId::getValue)
+                                .map(Integer::parseInt)
+                                .findAny()
+                                .orElse(null);
 
-            return Optional.of(
-                    protocolProfileMapper.createCollaborationProtocolProfileModel(
-                            counterpartyHerId, cpaId, partyInfo, packagings, simplePart));
+                return Optional.of(
+                        protocolProfileMapper.createCollaborationProtocolProfileModel(
+                                counterpartyHerId, cpaId, partyInfo, packagings, simplePart));
+            }
         }
         return Optional.empty();
     }

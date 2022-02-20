@@ -108,13 +108,12 @@ public class CollaborationProtocolRegistrySoapService
                                     registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
-                                    BASE_SOAP_ACTION + GetCpaForCommunicationPartiesXml.class.getSimpleName(),
+                                    BASE_SOAP_ACTION + GetCpaXml.class.getSimpleName(),
                                     request);
             CpaXmlDetails cpaDetails = response.getGetCpaXmlResult().getValue();
             String xmlString = cpaDetails.getCollaborationProtocolAgreementXml().getValue();
             return XMLUtils.getEntity(xmlString, CollaborationProtocolAgreement.class);
         } catch (SoapFaultClientException e) {
-
             if (e.getMessage() != null && e.getMessage().equals("Entitet ikke funnet")) {
                 log.error(e.getMessage().replace("Entitet", "Entitet " + cpaId));
             } else {

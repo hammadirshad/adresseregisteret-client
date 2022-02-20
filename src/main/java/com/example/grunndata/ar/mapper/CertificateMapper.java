@@ -12,7 +12,7 @@ import java.security.cert.X509Certificate;
 @Service
 public class CertificateMapper {
 
-    public CertificateModel certificateModel(CertificateDetails certificateDetails) {
+    public CertificateModel mapToCertificateModel(CertificateDetails certificateDetails) {
         CertificateModel certificateModel =
                 new CertificateModel(
                         certificateDetails.getLdapUrl().getValue(),

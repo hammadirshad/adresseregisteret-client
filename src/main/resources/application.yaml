@@ -2,7 +2,7 @@ address:
   registry:
     username:
     password:
-    ar-endpoint: https://ws-web.test.nhn.no/v1/CPPA/Basic
-    cpp-endpoint: https://ws-web.test.nhn.no/v1/AR/Basic
+    ar-endpoint: https://ws-web.test.nhn.no/v1/AR/Basic
+    cpp-endpoint: https://ws-web.test.nhn.no/v1/CPPA/Basic
 proxy:
   enabled: false

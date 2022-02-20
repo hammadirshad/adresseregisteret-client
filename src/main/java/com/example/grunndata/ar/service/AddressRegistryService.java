@@ -9,9 +9,7 @@ import com.example.schema.ar.CommunicationParty;
 import com.example.schema.ar.ElectronicAddress;
 import com.example.schema.ar.Service;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.ws.soap.client.SoapFaultClientException;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -23,26 +21,31 @@ public class AddressRegistryService {
 
     public CertificateModel getCertificateForEncryption(Integer herId) {
         CertificateDetails certificateDetails = addressRegistryActionService.getCertificateDetailsForEncryption(herId);
-        CertificateModel certificateModel = certificateMapper.certificateModel(certificateDetails);
-        CertificateErrors certificateError =
-                certificateValidator.validateEncryptionCertificate(certificateModel);
-        certificateModel.setCertificateError(certificateError);
-        return certificateModel;
+        if (certificateDetails != null) {
+            CertificateModel certificateModel = certificateMapper.mapToCertificateModel(certificateDetails);
+            CertificateErrors certificateError =
+                    certificateValidator.validateEncryptionCertificate(certificateModel);
+            certificateModel.setCertificateError(certificateError);
+            return certificateModel;
+        }
+        return null;
     }
 
     public CertificateModel getCertificateForValidatingSignature(Integer herId) {
         CertificateDetails certificateDetails = addressRegistryActionService.getCertificateDetailsForValidatingSignature(herId);
-        CertificateModel certificateModel = certificateMapper.certificateModel(certificateDetails);
-        CertificateErrors certificateError =
-                certificateValidator.validateSigningCertificate(certificateModel);
-        certificateModel.setCertificateError(certificateError);
-        return certificateModel;
+        if (certificateDetails != null) {
+            CertificateModel certificateModel = certificateMapper.mapToCertificateModel(certificateDetails);
+            CertificateErrors certificateError =
+                    certificateValidator.validateSigningCertificate(certificateModel);
+            certificateModel.setCertificateError(certificateError);
+            return certificateModel;
+        }
+        return null;
     }
 
-    @SneakyThrows
     public CommunicationPartyDetailModel getCommunicationPartyDetails(Integer herId) {
-        try {
-            CommunicationParty communicationParty = addressRegistryActionService.getCommunicationPartyDetails(herId);
+        CommunicationParty communicationParty = addressRegistryActionService.getCommunicationPartyDetails(herId);
+        if (communicationParty != null) {
             CommunicationPartyDetailModel details = new CommunicationPartyDetailModel();
             details.setHerId(communicationParty.getHerId());
 
@@ -72,16 +75,9 @@ public class AddressRegistryService {
             if (communicationParty instanceof Service service && service.getLocationDescription() != null) {
                 details.setSted(service.getLocationDescription().getValue());
             }
-
             return details;
-        } catch (SoapFaultClientException e) {
-            if (e.getMessage() != null
-                    && e.getMessage().contains("Kommunikasjonspart med oppgitt HER-id eksisterer ikke.")) {
-                log.error("Kommunikasjonspart med oppgitt HER-id " + herId + " eksisterer ikke.", e);
-                return new CommunicationPartyDetailModel(herId, "N/A", herId, "N/A");
-            }
-            throw e;
         }
+        return new CommunicationPartyDetailModel(herId, "N/A", null, "N/A");
     }
 
 
