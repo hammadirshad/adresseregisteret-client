@@ -4,7 +4,6 @@ import com.example.grunndata.GrundataWebServiceClient;
 import com.example.grunndata.ar.mapper.CertificateMapper;
 import com.example.grunndata.ar.service.*;
 import com.example.schema.ar.GetCommunicationPartyDetails;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -27,22 +26,21 @@ public class ARGrunndataConfig {
         return client;
     }
 
-    @Bean
+    //  @Bean
     public AbstractAddressRegistryRequest addressRegistrySoapService(
             AddressRegistryProperties addressRegistryProperties) {
         return new AddressRegistrySoapRequestService(
                 arGrundataWebServiceClient(), addressRegistryProperties);
     }
 
-    // @Bean
+    @Bean
     public AbstractAddressRegistryRequest addressRegistryHttpService(
             RestTemplate restTemplate, AddressRegistryProperties addressRegistryProperties) {
         return new AddressRegistryHttpRequestService(restTemplate, addressRegistryProperties);
     }
 
     @Bean
-    @ConditionalOnMissingBean(AbstractAddressRegistry.class)
-    public AbstractAddressRegistry addressRegistryService(
+    public AddressRegistryService addressRegistryService(
             AbstractAddressRegistryRequest addressRegistryActionService,
             CertificateValidator certificateValidator,
             CertificateMapper certificateMapper) {

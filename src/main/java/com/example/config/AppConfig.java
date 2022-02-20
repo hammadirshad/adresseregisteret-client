@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties({
         ProxyProperties.class,
         AddressRegistryProperties.class,
-        CollaborationProtocolRegistryProperties.class
+        CertificateProperties.class,
 })
 public class AppConfig {
 

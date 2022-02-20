@@ -128,7 +128,7 @@ public class AddressRegistryHttpRequestService extends AbstractAddressRegistryRe
             new HttpEntity<>(
                     soapEnvelope, getHttpHeaders(request.getClass(), getBasicAuth(), BASE_SOAP_ACTION));
     return restTemplate.exchange(
-            addressRegistryProperties.getEndpoint(), HttpMethod.POST, requestEntity, String.class);
+            addressRegistryProperties.getArEndpoint(), HttpMethod.POST, requestEntity, String.class);
   }
 
   private String getBasicAuth() {

@@ -2,12 +2,14 @@ package com.example.config;
 
 import com.example.grunndata.GrundataWebServiceClient;
 import com.example.grunndata.cpp.mapper.CollaborationProtocolProfileMapper;
-import com.example.grunndata.cpp.service.*;
+import com.example.grunndata.cpp.service.AbstractCollaborationProtocolRegistryRequest;
+import com.example.grunndata.cpp.service.CollaborationProtocolRegistryHttpService;
+import com.example.grunndata.cpp.service.CollaborationProtocolRegistryService;
+import com.example.grunndata.cpp.service.CollaborationProtocolRegistrySoapService;
 import com.example.schema.cpa.CollaborationProtocolProfile;
 import com.example.schema.cppa.GetCppXmlForCommunicationParty;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -34,22 +36,21 @@ public class CPPAGrundataConfig {
         return client;
     }
 
-    // @Bean
+    @Bean
     public AbstractCollaborationProtocolRegistryRequest cppRegistrySoapService(
-            CollaborationProtocolRegistryProperties registrySettings) {
+            AddressRegistryProperties registrySettings) {
         return new CollaborationProtocolRegistrySoapService(
                 cppaGrundataWebServiceClient(), registrySettings);
     }
 
-    @Bean
+    // @Bean
     public AbstractCollaborationProtocolRegistryRequest cppRegistryHttpService(
-            RestTemplate restTemplate, CollaborationProtocolRegistryProperties registrySettings) {
+            RestTemplate restTemplate, AddressRegistryProperties registrySettings) {
         return new CollaborationProtocolRegistryHttpService(restTemplate, registrySettings);
     }
 
     @Bean
-    @ConditionalOnMissingBean(AbstractCollaborationProtocolRegistry.class)
-    public AbstractCollaborationProtocolRegistry collaborationProtocolRegistry(
+    public CollaborationProtocolRegistryService collaborationProtocolRegistry(
             AbstractCollaborationProtocolRegistryRequest collaborationProtocolRegistryActionService,
             CollaborationProtocolProfileMapper profileService) {
         return new CollaborationProtocolRegistryService(

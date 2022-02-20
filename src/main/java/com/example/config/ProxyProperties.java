@@ -4,11 +4,11 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
-@ConfigurationProperties("nhn.environment")
+@ConfigurationProperties("proxy")
 public class ProxyProperties {
-    private boolean proxyEnabled = false;
+    private boolean enabled = false;
 
-    private String proxyHost;
+    private String host;
 
-    private int proxyPort;
+    private int port;
 }

@@ -1,17 +1,20 @@
 package com.example.grunndata.cpp.service;
 
 import com.example.grunndata.cpp.mapper.CollaborationProtocolProfileMapper;
+import com.example.model.CollaborationProtocolMessageModel;
 import com.example.model.CollaborationProtocolProfileModel;
+import com.example.model.CollaborationProtocolRoleModel;
 import com.example.schema.cpa.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Slf4j
-public class CollaborationProtocolRegistryService extends AbstractCollaborationProtocolRegistry {
+public class CollaborationProtocolRegistryService {
 
     private final AbstractCollaborationProtocolRegistryRequest
             collaborationProtocolRegistrySoapService;
@@ -23,7 +26,7 @@ public class CollaborationProtocolRegistryService extends AbstractCollaborationP
      * @param counterpartyHerId Integer
      * @return CollaborationProtocolProfileModel
      */
-    public Optional<CollaborationProtocolProfileModel> findProtocolForCounterParty(
+    public Optional<CollaborationProtocolProfileModel> getProtocolForCounterParty(
             Integer counterpartyHerId) {
         CollaborationProtocolProfile collaborationProtocolProfile =
                 collaborationProtocolRegistrySoapService.getCppForCommunicationParty(counterpartyHerId);
@@ -45,7 +48,7 @@ public class CollaborationProtocolRegistryService extends AbstractCollaborationP
      * @param counterpartyHerId Integer
      * @return CollaborationProtocolProfileModel
      */
-    public Optional<CollaborationProtocolProfileModel> findAgreementForCommunicationParty(
+    public Optional<CollaborationProtocolProfileModel> getAgreementForCommunicationParty(
             Integer herId, Integer counterpartyHerId) {
 
         CollaborationProtocolAgreement protocolAgreement =
@@ -71,7 +74,7 @@ public class CollaborationProtocolRegistryService extends AbstractCollaborationP
      * @param cpaId String
      * @return CollaborationProtocolProfileModel
      */
-    public Optional<CollaborationProtocolProfileModel> findAgreementById(
+    public Optional<CollaborationProtocolProfileModel> getAgreementById(
             String cpaId, Integer herId) {
 
         CollaborationProtocolAgreement protocolAgreement =
@@ -107,5 +110,72 @@ public class CollaborationProtocolRegistryService extends AbstractCollaborationP
                                         .anyMatch(partyId -> !partyId.equals(herId.toString())))
                 .findAny()
                 .orElse(null);
+    }
+
+    /**
+     * Finds the collaboration information for a specific message /// Find using the
+     * ProcessSpecification name as this matches the message name in both new and old Cpp formats ///
+     * For response messages such as AppRec the ProcessSpecification name is not setup and the
+     * receivemessages need to be checked
+     *
+     * @param messageName i.e. DIALOG_INNBYGER_EKONTAKT, DIALOG_INNBYGGER_KOORDINATOR, etc
+     * @return CollaborationProtocolMessageModel
+     */
+    public CollaborationProtocolMessageModel getMessageForSendMessage(
+            CollaborationProtocolProfileModel profile, String messageName) {
+        if (messageName == null || messageName.isEmpty()) {
+            throw new IllegalArgumentException("Message Name is empty");
+        }
+
+        Optional<CollaborationProtocolRoleModel> collaborationProtocolRoleModelOptional =
+                profile.getRoles().stream()
+                        .filter(role -> role.getProcessSpecification().getName().equalsIgnoreCase(messageName))
+                        .findFirst();
+
+        if (collaborationProtocolRoleModelOptional.isPresent()) {
+            return collaborationProtocolRoleModelOptional.get().getSendMessages().stream()
+                    .findFirst()
+                    .orElse(null);
+        } else {
+            return profile.getRoles().stream()
+                    .map(CollaborationProtocolRoleModel::getSendMessages)
+                    .flatMap(Collection::stream)
+                    .filter(m -> m.getName().equalsIgnoreCase(messageName))
+                    .findFirst()
+                    .orElse(null);
+        }
+    }
+
+    /**
+     * Finds the collaboration information for a specific message Find using the ProcessSpecification
+     * name as this matches the message name in both new and old Cpp formats For response messages
+     * such as AppRec the ProcessSpecification name is not setup and the receivemessages need to be
+     *
+     * @param messageName i.e. DIALOG_INNBYGER_EKONTAKT, DIALOG_INNBYGGER_KOORDINATOR, etc.
+     * @return CollaborationProtocolMessageModel;
+     */
+    public CollaborationProtocolMessageModel findMessageForReceiver(
+            CollaborationProtocolProfileModel profile, String messageName) {
+        if (messageName == null || messageName.isEmpty()) {
+            throw new IllegalArgumentException("Message Name is empty");
+        }
+
+        Optional<CollaborationProtocolRoleModel> collaborationProtocolRoleModelOptional =
+                profile.getRoles().stream()
+                        .filter(role -> role.getProcessSpecification().getName().equalsIgnoreCase(messageName))
+                        .findFirst();
+
+        if (collaborationProtocolRoleModelOptional.isPresent()) {
+            return collaborationProtocolRoleModelOptional.get().getReceiveMessages().stream()
+                    .findFirst()
+                    .orElse(null);
+        } else {
+            return profile.getRoles().stream()
+                    .map(CollaborationProtocolRoleModel::getReceiveMessages)
+                    .flatMap(Collection::stream)
+                    .filter(m -> m.getName().equalsIgnoreCase(messageName))
+                    .findFirst()
+                    .orElse(null);
+        }
     }
 }

@@ -21,7 +21,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
             GetCertificateDetailsForEncryptionResponse response =
                     (GetCertificateDetailsForEncryptionResponse)
                             grundataWebServiceClient.sendRequest(
-                                    addressRegistrySettings.getEndpoint(),
+                                    addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),
                                     BASE_SOAP_ACTION + GetCertificateDetailsForEncryption.class.getSimpleName(),
@@ -42,7 +42,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
             GetCertificateDetailsForValidatingSignatureResponse response =
                     (GetCertificateDetailsForValidatingSignatureResponse)
                             grundataWebServiceClient.sendRequest(
-                                    addressRegistrySettings.getEndpoint(),
+                                    addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),
                                     BASE_SOAP_ACTION
@@ -64,7 +64,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
             GetCommunicationPartyDetailsResponse response =
                     (GetCommunicationPartyDetailsResponse)
                             grundataWebServiceClient.sendRequest(
-                                    addressRegistrySettings.getEndpoint(),
+                                    addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),
                                     BASE_SOAP_ACTION + GetCommunicationPartyDetails.class.getSimpleName(),

@@ -29,5 +29,7 @@ public class AddressRegistryProperties {
   /**
    * The endpoint found in the WCF configuration
    */
-  private String endpoint;
+  private String arEndpoint;
+
+  private String cppEndpoint;
 }

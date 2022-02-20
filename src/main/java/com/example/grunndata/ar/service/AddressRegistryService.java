@@ -15,7 +15,7 @@ import org.springframework.ws.soap.client.SoapFaultClientException;
 
 @RequiredArgsConstructor
 @Slf4j
-public class AddressRegistryService extends AbstractAddressRegistry {
+public class AddressRegistryService {
 
     private final AbstractAddressRegistryRequest addressRegistryActionService;
     private final CertificateValidator certificateValidator;

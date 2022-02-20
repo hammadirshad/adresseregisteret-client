@@ -26,7 +26,7 @@ public class RestTemplateConfig {
     @Bean
     public RestTemplate restTemplate(
             RestTemplateBuilder restTemplateBuilder, ProxyProperties proxyProperties) {
-        if (proxyProperties.isProxyEnabled()) {
+        if (proxyProperties.isEnabled()) {
             withNHNProxy(restTemplateBuilder, proxyProperties);
         }
         return restTemplateBuilder.build();
@@ -41,8 +41,8 @@ public class RestTemplateConfig {
                                     .setRoutePlanner(
                                             new DefaultProxyRoutePlanner(
                                                     new HttpHost(
-                                                            proxyProperties.getProxyHost(),
-                                                            proxyProperties.getProxyPort())) {
+                                                            proxyProperties.getHost(),
+                                                            proxyProperties.getPort())) {
                                                 @Override
                                                 public HttpHost determineProxy(
                                                         HttpHost target, HttpRequest request, HttpContext context)

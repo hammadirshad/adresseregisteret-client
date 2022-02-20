@@ -73,13 +73,13 @@ public class CertificateValidator {
 
         if (certificateProperties.isRemoteValidation()) {
             Proxy proxy = null;
-            if (proxyProperties.isProxyEnabled()) {
+            if (proxyProperties.isEnabled()) {
                 InetSocketAddress sa =
                         new InetSocketAddress(
-                                proxyProperties.getProxyHost(), proxyProperties.getProxyPort());
+                                proxyProperties.getHost(), proxyProperties.getPort());
                 proxy = new Proxy(Proxy.Type.HTTP, sa);
             }
-            X509CRL x509CRL = CertificateUtils.getCRL(certificate, null);
+            X509CRL x509CRL = CertificateUtils.getCRL(certificate, proxy);
             if (x509CRL != null) {
                 boolean revoked = verify(x509CRL, certificate, new Date());
                 if (revoked) {

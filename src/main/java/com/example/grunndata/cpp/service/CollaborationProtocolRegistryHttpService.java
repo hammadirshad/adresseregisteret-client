@@ -1,6 +1,6 @@
 package com.example.grunndata.cpp.service;
 
-import com.example.config.CollaborationProtocolRegistryProperties;
+import com.example.config.AddressRegistryProperties;
 import com.example.grunndata.AbstractGrundataRegistryRequest;
 import com.example.schema.cpa.CollaborationProtocolAgreement;
 import com.example.schema.cpa.CollaborationProtocolProfile;
@@ -25,7 +25,7 @@ public class CollaborationProtocolRegistryHttpService
         implements AbstractGrundataRegistryRequest {
 
     private final RestTemplate restTemplate;
-    private final CollaborationProtocolRegistryProperties registrySettings;
+    private final AddressRegistryProperties registrySettings;
 
     @Override
     public CollaborationProtocolProfile getCppForCommunicationParty(Integer counterpartyHerId) {
@@ -162,7 +162,7 @@ public class CollaborationProtocolRegistryHttpService
                 new HttpEntity<>(
                         soapEnvelope, getHttpHeaders(request.getClass(), getBasicAuth(), BASE_SOAP_ACTION));
         return restTemplate.exchange(
-                registrySettings.getEndpoint(), HttpMethod.POST, requestEntity, String.class);
+                registrySettings.getCppEndpoint(), HttpMethod.POST, requestEntity, String.class);
     }
 
     private String getBasicAuth() {

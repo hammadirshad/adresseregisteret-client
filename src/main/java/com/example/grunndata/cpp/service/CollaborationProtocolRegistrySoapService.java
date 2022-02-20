@@ -1,6 +1,6 @@
 package com.example.grunndata.cpp.service;
 
-import com.example.config.CollaborationProtocolRegistryProperties;
+import com.example.config.AddressRegistryProperties;
 import com.example.grunndata.GrundataWebServiceClient;
 import com.example.schema.cpa.CollaborationProtocolAgreement;
 import com.example.schema.cpa.CollaborationProtocolProfile;
@@ -17,7 +17,7 @@ public class CollaborationProtocolRegistrySoapService
         extends AbstractCollaborationProtocolRegistryRequest {
 
     private final GrundataWebServiceClient grundataWebServiceClient;
-    private final CollaborationProtocolRegistryProperties registrySettings;
+    private final AddressRegistryProperties registrySettings;
 
     /**
      * FindProtocolForCounterparty Gets the CPP profile for a specific communication party
@@ -33,7 +33,7 @@ public class CollaborationProtocolRegistrySoapService
             GetCppXmlForCommunicationPartyResponse response =
                     (GetCppXmlForCommunicationPartyResponse)
                             grundataWebServiceClient.sendRequest(
-                                    registrySettings.getEndpoint(),
+                                    registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
                                     BASE_SOAP_ACTION + GetCppXmlForCommunicationParty.class.getSimpleName(),
@@ -69,7 +69,7 @@ public class CollaborationProtocolRegistrySoapService
             GetCpaForCommunicationPartiesXmlResponse response =
                     (GetCpaForCommunicationPartiesXmlResponse)
                             grundataWebServiceClient.sendRequest(
-                                    registrySettings.getEndpoint(),
+                                    registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
                                     BASE_SOAP_ACTION + GetCpaForCommunicationPartiesXml.class.getSimpleName(),
@@ -105,7 +105,7 @@ public class CollaborationProtocolRegistrySoapService
             GetCpaXmlResponse response =
                     (GetCpaXmlResponse)
                             grundataWebServiceClient.sendRequest(
-                                    registrySettings.getEndpoint(),
+                                    registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
                                     BASE_SOAP_ACTION + GetCpaForCommunicationPartiesXml.class.getSimpleName(),
