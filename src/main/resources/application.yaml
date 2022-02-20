@@ -1,0 +1,10 @@
+collaboration:
+  registry:
+    username:
+    password:
+    endpoint: https://ws-web.test.nhn.no/v1/CPPA/Basic
+address:
+  registry:
+    username:
+    password:
+    endpoint: https://ws-web.test.nhn.no/v1/AR/Basic

@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the schema that corresponds to the version 2.0 CPP/A spec -->
+<!-- Some parsers may require explicit declaration of 'xmlns:xml="http://www.w3.org/XML/1998/namespace"'.
+     In that case, a copy of this schema augmented with the above declaration should be cached and used
+     for the purpose of schema validation for CPPs and CPAs. -->
+<schema
+        xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+        xmlns:tns="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        attributeFormDefault="qualified"
+        elementFormDefault="qualified"
+        targetNamespace="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd"
+        version="2_0b" xmlns="http://www.w3.org/2001/XMLSchema">
+    <attribute name="idref" type="IDREF"/>
+    <attribute name="id" type="ID"/>
+    <attribute name="version" type="tns:non-empty-string"/>
+    <attribute name="syncReplyMode" type="tns:syncReplyMode.type"/>
+    <attributeGroup name="pkg.grp">
+        <attribute ref="tns:id" use="required"/>
+        <attribute name="mimetype" type="tns:non-empty-string" use="required"/>
+        <attribute name="mimeparameters" type="tns:non-empty-string"/>
+    </attributeGroup>
+    <attributeGroup name="xlink.grp">
+        <attribute fixed="simple" ref="xlink:type"/>
+        <attribute ref="xlink:href" use="required"/>
+    </attributeGroup>
+    <complexType name="ActionBinding.type">
+        <attribute name="id" type="ID" use="required"/>
+        <attribute name="action" type="tns:non-empty-string" use="required"/>
+        <attribute name="packageId" type="IDREF" use="required"/>
+        <attribute ref="xlink:href" use="optional"/>
+        <attribute fixed="simple" ref="xlink:type"/>
+        <sequence>
+            <any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+            <element minOccurs="0" ref="tns:ActionContext"/>
+            <element maxOccurs="unbounded" ref="tns:ChannelId"/>
+            <element ref="tns:BusinessTransactionCharacteristics"/>
+        </sequence>
+    </complexType>
+    <complexType name="service.type">
+        <simpleContent>
+            <extension base="tns:non-empty-string">
+                <attribute name="type" type="tns:non-empty-string"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="protocol.type">
+        <simpleContent>
+            <extension base="tns:non-empty-string">
+                <attribute ref="tns:version"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="SecurityPolicy.type"/>
+    <complexType name="CertificateRef.type">
+        <attribute name="certId" type="IDREF" use="required"/>
+    </complexType>
+    <complexType name="SecurityDetailsRef.type">
+        <attribute name="securityId" type="IDREF" use="required"/>
+    </complexType>
+    <element name="CollaborationProtocolAgreement">
+        <complexType>
+            <attribute name="cpaid" type="tns:non-empty-string" use="required"/>
+            <attribute ref="tns:version" use="required"/>
+            <sequence>
+                <element ref="tns:Status"/>
+                <element ref="tns:Start"/>
+                <element ref="tns:End"/>
+                <element minOccurs="0" ref="tns:ConversationConstraints"/>
+                <element maxOccurs="2" minOccurs="2" ref="tns:PartyInfo"/>
+                <element maxOccurs="unbounded" ref="tns:SimplePart"/>
+                <element maxOccurs="unbounded" ref="tns:Packaging"/>
+                <element minOccurs="0" ref="tns:Signature"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:Comment"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Signature">
+        <complexType>
+            <sequence>
+                <element maxOccurs="3" ref="ds:Signature"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CollaborationProtocolProfile">
+        <complexType>
+            <attribute name="cppid" type="tns:non-empty-string" use="required"/>
+            <attribute ref="tns:version" use="required"/>
+            <sequence>
+                <element maxOccurs="unbounded" ref="tns:PartyInfo"/>
+                <element maxOccurs="unbounded" ref="tns:SimplePart"/>
+                <element maxOccurs="unbounded" ref="tns:Packaging"/>
+                <element minOccurs="0" ref="tns:Signature"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:Comment"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ProcessSpecification">
+        <complexType>
+            <attribute name="name" type="tns:non-empty-string" use="required"/>
+            <attribute ref="tns:version" use="required"/>
+            <attribute name="uuid" type="anyURI"/>
+            <attributeGroup ref="tns:xlink.grp"/>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" ref="ds:Reference"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Service" type="tns:service.type"/>
+    <element name="Protocol" type="tns:protocol.type"/>
+    <element name="SendingProtocol" type="tns:protocol.type"/>
+    <element name="ReceivingProtocol" type="tns:protocol.type"/>
+    <element name="OverrideMshActionBinding">
+        <complexType>
+            <attribute name="action" type="tns:non-empty-string" use="required"/>
+            <attribute name="channelId" type="IDREF" use="required"/>
+        </complexType>
+    </element>
+    <element name="ChannelId" type="IDREF"/>
+    <element name="ActionContext">
+        <complexType>
+            <attribute name="binaryCollaboration" type="tns:non-empty-string" use="required"/>
+            <attribute name="businessTransactionActivity" type="tns:non-empty-string" use="required"/>
+            <attribute name="requestOrResponseAction" type="tns:non-empty-string" use="required"/>
+            <sequence>
+                <any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+                <element minOccurs="0" ref="tns:CollaborationActivity"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CollaborationActivity">
+        <complexType>
+            <attribute name="name" type="tns:non-empty-string"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:CollaborationActivity"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CollaborationRole">
+        <complexType>
+            <sequence>
+                <element ref="tns:ProcessSpecification"/>
+                <element ref="tns:Role"/>
+                <element maxOccurs="unbounded" minOccurs="0" name="ApplicationCertificateRef"
+                         type="tns:CertificateRef.type"/>
+                <element minOccurs="0" name="ApplicationSecurityDetailsRef"
+                         type="tns:SecurityDetailsRef.type"/>
+                <element ref="tns:ServiceBinding"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="PartyInfo">
+        <complexType>
+            <attribute name="partyName" type="tns:non-empty-string" use="required"/>
+            <attribute name="defaultMshChannelId" type="IDREF" use="required"/>
+            <attribute name="defaultMshPackageId" type="IDREF" use="required"/>
+            <sequence>
+                <element maxOccurs="unbounded" ref="tns:PartyId"/>
+                <element maxOccurs="unbounded" ref="tns:PartyRef"/>
+                <element maxOccurs="unbounded" ref="tns:CollaborationRole"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:Certificate"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:SecurityDetails"/>
+                <element maxOccurs="unbounded" ref="tns:DeliveryChannel"/>
+                <element maxOccurs="unbounded" ref="tns:Transport"/>
+                <element maxOccurs="unbounded" ref="tns:DocExchange"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:OverrideMshActionBinding"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="PartyId">
+        <complexType>
+            <simpleContent>
+                <extension base="tns:non-empty-string">
+                    <attribute name="type" type="anyURI"/>
+                </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+    <element name="PartyRef">
+        <complexType>
+            <attribute name="type" type="anyURI"/>
+            <attribute name="schemaLocation" type="anyURI"/>
+            <attributeGroup ref="tns:xlink.grp"/>
+            <sequence>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DeliveryChannel">
+        <complexType>
+            <attribute name="channelId" type="ID" use="required"/>
+            <attribute name="transportId" type="IDREF" use="required"/>
+            <attribute name="docExchangeId" type="IDREF" use="required"/>
+            <sequence>
+                <element ref="tns:MessagingCharacteristics"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Transport">
+        <complexType>
+            <attribute name="transportId" type="ID" use="required"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:TransportSender"/>
+                <element minOccurs="0" ref="tns:TransportReceiver"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AccessAuthentication" type="tns:accessAuthentication.type"/>
+    <element name="TransportSender">
+        <complexType>
+            <sequence>
+                <element name="TransportProtocol" type="tns:protocol.type"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:AccessAuthentication"/>
+                <element minOccurs="0" ref="tns:TransportClientSecurity"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TransportReceiver">
+        <complexType>
+            <sequence>
+                <element name="TransportProtocol" type="tns:protocol.type"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:AccessAuthentication"/>
+                <element maxOccurs="unbounded" ref="tns:Endpoint"/>
+                <element minOccurs="0" ref="tns:TransportServerSecurity"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Endpoint">
+        <complexType>
+            <attribute name="uri" type="anyURI" use="required"/>
+            <attribute default="allPurpose" name="type" type="tns:endpointType.type"/>
+        </complexType>
+    </element>
+    <element name="TransportClientSecurity">
+        <complexType>
+            <sequence>
+                <element name="TransportSecurityProtocol" type="tns:protocol.type"/>
+                <element minOccurs="0" name="ClientCertificateRef" type="tns:CertificateRef.type"/>
+                <element minOccurs="0" name="ServerSecurityDetailsRef" type="tns:SecurityDetailsRef.type"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:EncryptionAlgorithm"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TransportServerSecurity">
+        <complexType>
+            <sequence>
+                <element name="TransportSecurityProtocol" type="tns:protocol.type"/>
+                <element name="ServerCertificateRef" type="tns:CertificateRef.type"/>
+                <element minOccurs="0" name="ClientSecurityDetailsRef" type="tns:SecurityDetailsRef.type"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:EncryptionAlgorithm"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Certificate">
+        <complexType>
+            <attribute name="certId" type="ID" use="required"/>
+            <sequence>
+                <element ref="ds:KeyInfo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DocExchange">
+        <complexType>
+            <attribute name="docExchangeId" type="ID" use="required"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:ebXMLSenderBinding"/>
+                <element minOccurs="0" ref="tns:ebXMLReceiverBinding"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ReliableMessaging">
+        <complexType>
+            <sequence>
+                <element minOccurs="0" name="Retries" type="integer"/>
+                <element minOccurs="0" name="RetryInterval" type="duration"/>
+                <element name="MessageOrderSemantics" type="tns:messageOrderSemantics.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="PersistDuration" type="duration"/>
+    <element name="SenderNonRepudiation">
+        <complexType>
+            <sequence>
+                <element name="NonRepudiationProtocol" type="tns:protocol.type"/>
+                <element ref="tns:HashFunction"/>
+                <element maxOccurs="unbounded" ref="tns:SignatureAlgorithm"/>
+                <element name="SigningCertificateRef" type="tns:CertificateRef.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ReceiverNonRepudiation">
+        <complexType>
+            <sequence>
+                <element name="NonRepudiationProtocol" type="tns:protocol.type"/>
+                <element ref="tns:HashFunction"/>
+                <element maxOccurs="unbounded" ref="tns:SignatureAlgorithm"/>
+                <element minOccurs="0" name="SigningSecurityDetailsRef" type="tns:SecurityDetailsRef.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HashFunction" type="tns:non-empty-string"/>
+    <element name="EncryptionAlgorithm">
+        <complexType>
+            <simpleContent>
+                <extension base="tns:non-empty-string">
+                    <attribute name="minimumStrength" type="integer"/>
+                    <attribute name="oid" type="tns:non-empty-string"/>
+                    <attribute name="w3c" type="tns:non-empty-string"/>
+                    <attribute name="enumerationType" type="tns:non-empty-string"/>
+                </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+    <element name="SignatureAlgorithm">
+        <complexType>
+            <simpleContent>
+                <extension base="tns:non-empty-string">
+                    <attribute name="oid" type="tns:non-empty-string"/>
+                    <attribute name="w3c" type="tns:non-empty-string"/>
+                    <attribute name="enumerationType" type="tns:non-empty-string"/>
+                </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+    <element name="SenderDigitalEnvelope">
+        <complexType>
+            <sequence>
+                <element name="DigitalEnvelopeProtocol" type="tns:protocol.type"/>
+                <element maxOccurs="unbounded" ref="tns:EncryptionAlgorithm"/>
+                <element minOccurs="0" name="EncryptionSecurityDetailsRef"
+                         type="tns:SecurityDetailsRef.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ReceiverDigitalEnvelope">
+        <complexType>
+            <sequence>
+                <element name="DigitalEnvelopeProtocol" type="tns:protocol.type"/>
+                <element maxOccurs="unbounded" ref="tns:EncryptionAlgorithm"/>
+                <element name="EncryptionCertificateRef" type="tns:CertificateRef.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ebXMLSenderBinding">
+        <complexType>
+            <attribute ref="tns:version" use="required"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:ReliableMessaging"/>
+                <element minOccurs="0" ref="tns:PersistDuration"/>
+                <element minOccurs="0" ref="tns:SenderNonRepudiation"/>
+                <element minOccurs="0" ref="tns:SenderDigitalEnvelope"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:NamespaceSupported"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ebXMLReceiverBinding">
+        <complexType>
+            <attribute ref="tns:version" use="required"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:ReliableMessaging"/>
+                <element minOccurs="0" ref="tns:PersistDuration"/>
+                <element minOccurs="0" ref="tns:ReceiverNonRepudiation"/>
+                <element minOccurs="0" ref="tns:ReceiverDigitalEnvelope"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:NamespaceSupported"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="NamespaceSupported">
+        <complexType>
+            <simpleContent>
+                <extension base="anyURI">
+                    <attribute name="location" type="anyURI" use="required"/>
+                    <attribute ref="tns:version"/>
+                </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+    <element name="BusinessTransactionCharacteristics">
+        <complexType>
+            <attribute name="isNonRepudiationRequired" type="boolean"/>
+            <attribute name="isNonRepudiationReceiptRequired" type="boolean"/>
+            <attribute name="isConfidential" type="tns:persistenceLevel.type"/>
+            <attribute name="isAuthenticated" type="tns:persistenceLevel.type"/>
+            <attribute name="isTamperProof" type="tns:persistenceLevel.type"/>
+            <attribute name="isAuthorizationRequired" type="boolean"/>
+            <attribute name="isIntelligibleCheckRequired" type="boolean"/>
+            <attribute name="timeToAcknowledgeReceipt" type="duration"/>
+            <attribute name="timeToAcknowledgeAcceptance" type="duration"/>
+            <attribute name="timeToPerform" type="duration"/>
+            <attribute name="retryCount" type="integer"/>
+        </complexType>
+    </element>
+    <element name="MessagingCharacteristics">
+        <complexType>
+            <attribute default="none" ref="tns:syncReplyMode"/>
+            <attribute default="perMessage" name="ackRequested"
+                       type="tns:perMessageCharacteristics.type"/>
+            <attribute default="perMessage" name="ackSignatureRequested"
+                       type="tns:perMessageCharacteristics.type"/>
+            <attribute default="perMessage" name="duplicateElimination"
+                       type="tns:perMessageCharacteristics.type"/>
+            <attribute name="actor" type="tns:actor.type"/>
+        </complexType>
+    </element>
+    <element name="ServiceBinding">
+        <complexType>
+            <sequence>
+                <element ref="tns:Service"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:CanSend"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:CanReceive"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CanSend">
+        <complexType>
+            <sequence>
+                <element name="ThisPartyActionBinding" type="tns:ActionBinding.type"/>
+                <element minOccurs="0" name="OtherPartyActionBinding" type="IDREF"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:CanReceive"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CanReceive">
+        <complexType>
+            <sequence>
+                <element name="ThisPartyActionBinding" type="tns:ActionBinding.type"/>
+                <element minOccurs="0" name="OtherPartyActionBinding" type="IDREF"/>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:CanSend"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Status">
+        <complexType>
+            <attribute name="value" type="tns:statusValue.type" use="required"/>
+        </complexType>
+    </element>
+    <element name="Start" type="dateTime"/>
+    <element name="End" type="dateTime"/>
+    <element name="Type" type="tns:non-empty-string"/>
+    <element name="ConversationConstraints">
+        <complexType>
+            <attribute name="invocationLimit" type="int"/>
+            <attribute name="concurrentConversations" type="int"/>
+        </complexType>
+    </element>
+    <element name="Role">
+        <complexType>
+            <attribute name="name" type="tns:non-empty-string" use="required"/>
+            <attributeGroup ref="tns:xlink.grp"/>
+        </complexType>
+    </element>
+    <!-- COMMON -->
+    <element name="SignatureTransforms">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" ref="ds:Transform"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="EncryptionTransforms">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" ref="ds:Transform"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Constituent">
+        <complexType>
+            <attribute ref="tns:idref" use="required"/>
+            <attribute default="false" name="excludedFromSignature" type="boolean"/>
+            <attribute name="minOccurs" type="nonNegativeInteger"/>
+            <attribute name="maxOccurs" type="nonNegativeInteger"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:SignatureTransforms"/>
+                <element minOccurs="0" ref="tns:EncryptionTransforms"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Packaging">
+        <complexType>
+            <attribute ref="tns:id" use="required"/>
+            <sequence>
+                <element name="ProcessingCapabilities">
+                    <complexType>
+                        <attribute name="parse" type="boolean" use="required"/>
+                        <attribute name="generate" type="boolean" use="required"/>
+                    </complexType>
+                </element>
+                <element maxOccurs="unbounded" name="CompositeList">
+                    <complexType>
+                        <choice maxOccurs="unbounded">
+                            <element name="Encapsulation">
+                                <complexType>
+                                    <attributeGroup ref="tns:pkg.grp"/>
+                                    <sequence>
+                                        <element ref="tns:Constituent"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="Composite">
+                                <complexType>
+                                    <attributeGroup ref="tns:pkg.grp"/>
+                                    <sequence>
+                                        <element maxOccurs="unbounded" ref="tns:Constituent"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </choice>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Comment">
+        <complexType>
+            <simpleContent>
+                <extension base="tns:non-empty-string">
+                    <attribute ref="xml:lang"/>
+                </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+    <element name="SimplePart">
+        <complexType>
+            <attribute ref="xlink:role"/>
+            <attributeGroup ref="tns:pkg.grp"/>
+            <sequence>
+                <element maxOccurs="unbounded" minOccurs="0" ref="tns:NamespaceSupported"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SecurityDetailsRef" type="tns:SecurityDetailsRef.type"/>
+    <element name="SecurityDetails">
+        <complexType>
+            <attribute name="securityId" type="ID" use="required"/>
+            <sequence>
+                <element minOccurs="0" ref="tns:TrustAnchors"/>
+                <element minOccurs="0" ref="tns:SecurityPolicy"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TrustAnchors">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" name="AnchorCertificateRef" type="tns:CertificateRef.type"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SecurityPolicy">
+        <complexType>
+            <sequence>
+            </sequence>
+        </complexType>
+    </element>
+    <import
+            namespace="http://www.w3.org/1999/xlink"
+            schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/xlink.xsd"/>
+    <import
+            namespace="http://www.w3.org/2000/09/xmldsig#"
+            schemaLocation="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"/>
+    <import
+            namespace="http://www.w3.org/XML/1998/namespace"
+            schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+    <simpleType name="statusValue.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="agreed"/>
+            <enumeration value="signed"/>
+            <enumeration value="proposed"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="endpointType.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="login"/>
+            <enumeration value="request"/>
+            <enumeration value="response"/>
+            <enumeration value="error"/>
+            <enumeration value="allPurpose"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="non-empty-string">
+        <restriction base="string">
+            <minLength value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="syncReplyMode.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="mshSignalsOnly"/>
+            <enumeration value="responseOnly"/>
+            <enumeration value="signalsAndResponse"/>
+            <enumeration value="signalsOnly"/>
+            <enumeration value="none"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="perMessageCharacteristics.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="always"/>
+            <enumeration value="never"/>
+            <enumeration value="perMessage"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="actor.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="urn:oasis:names:tc:ebxml-msg:actor:nextMSH"/>
+            <enumeration value="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="messageOrderSemantics.type">
+        <restriction base="Name">
+            <enumeration value="Guaranteed"/>
+            <enumeration value="NotGuaranteed"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="persistenceLevel.type">
+        <restriction base="Name">
+            <enumeration value="none"/>
+            <enumeration value="transient"/>
+            <enumeration value="persistent"/>
+            <enumeration value="transient-and-persistent"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="accessAuthentication.type">
+        <restriction base="NMTOKEN">
+            <enumeration value="basic"/>
+            <enumeration value="digest"/>
+        </restriction>
+    </simpleType>
+</schema>

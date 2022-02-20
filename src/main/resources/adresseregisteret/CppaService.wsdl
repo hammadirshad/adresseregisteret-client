@@ -1,0 +1,3095 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:tns="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsp="http://www.w3.org/ns/ws-policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  name="CppaService"
+                  targetNamespace="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+>
+    <wsdl:binding name="WSHttpBinding_ICPPAService" type="tns:ICPPAService">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppForProcesses">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcesses"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXmlForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAllCollaborationRoles">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRoles"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplateXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplates">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplates"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationParties">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationParties"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationPartiesXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyCreatedAfter">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfter"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApproval">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApproval"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApprovalUnfiltered">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfiltered"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRevocatedCpas">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpas"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RevokeCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveAndUpdateCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AddProcessToCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RemoveProcessFromCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetProcessesInCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICPPAService_policy"/>
+    </wsdl:binding>
+    <wsdl:binding name="NetTcpBinding_ICPPAService" type="tns:ICPPAService">
+        <soap12:binding transport="http://schemas.microsoft.com/soap/tcp"/>
+        <wsdl:operation name="GetCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppForProcesses">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcesses"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXmlForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAllCollaborationRoles">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRoles"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplateXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplates">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplates"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppTemplate">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationParties">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationParties"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationPartiesXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationParty">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyCreatedAfter">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfter"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApproval">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApproval"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApprovalUnfiltered">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfiltered"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyXml">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRevocatedCpas">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpas"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RevokeCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveAndUpdateCpa">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AddProcessToCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RemoveProcessFromCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetProcessesInCpp">
+            <soap12:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap12:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsp:PolicyReference URI="#NetTcpBinding_ICPPAService_policy"/>
+    </wsdl:binding>
+    <wsdl:binding name="BasicHttpBinding_ICPPAService" type="tns:ICPPAService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetCpp">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppForCommunicationParty">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCpp">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppForProcesses">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcesses"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXmlForCommunicationParty">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAllCollaborationRoles">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRoles"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplate">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplateXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCppTemplate">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplates">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplates"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppTemplate">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplate"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpa">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationParties">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationParties"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationPartiesXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationParty">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationParty"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyCreatedAfter">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfter"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApproval">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApproval"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApprovalUnfiltered">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfiltered"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyXml">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXml"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRevocatedCpas">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpas"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RevokeCpa">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveCpa">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveAndUpdateCpa">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpa"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AddProcessToCpp">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RemoveProcessFromCpp">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetProcessesInCpp">
+            <soap:operation
+                    style="document"
+                    soapAction="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCpp"/>
+            <wsdl:fault name="GenericFaultFault">
+                <soap:fault name="GenericFaultFault" namespace="" use="literal"/>
+            </wsdl:fault>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsp:PolicyReference URI="#BasicHttpBinding_ICPPAService_policy"/>
+    </wsdl:binding>
+    <wsdl:message name="ICPPAService_GetCpp_InputMessage">
+        <wsdl:part element="tns:GetCpp" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpp_OutputMessage">
+        <wsdl:part element="tns:GetCppResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpp_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q1="http://register.nhn.no/Common" element="q1:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppForCommunicationParty_InputMessage">
+        <wsdl:part element="tns:GetCppForCommunicationParty" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppForCommunicationParty_OutputMessage">
+        <wsdl:part element="tns:GetCppForCommunicationPartyResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppForCommunicationParty_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q2="http://register.nhn.no/Common" element="q2:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCpp_InputMessage">
+        <wsdl:part element="tns:CreateCpp" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCpp_OutputMessage">
+        <wsdl:part element="tns:CreateCppResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCpp_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q3="http://register.nhn.no/Common" element="q3:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppForProcesses_InputMessage">
+        <wsdl:part element="tns:CreateCppForProcesses" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppForProcesses_OutputMessage">
+        <wsdl:part element="tns:CreateCppForProcessesResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppForProcesses_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q4="http://register.nhn.no/Common" element="q4:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppXml_InputMessage">
+        <wsdl:part element="tns:CreateCppXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppXml_OutputMessage">
+        <wsdl:part element="tns:CreateCppXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q5="http://register.nhn.no/Common" element="q5:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXmlForCommunicationParty_InputMessage">
+        <wsdl:part element="tns:GetCppXmlForCommunicationParty" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXmlForCommunicationParty_OutputMessage">
+        <wsdl:part element="tns:GetCppXmlForCommunicationPartyResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXmlForCommunicationParty_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q6="http://register.nhn.no/Common" element="q6:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXml_InputMessage">
+        <wsdl:part element="tns:GetCppXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXml_OutputMessage">
+        <wsdl:part element="tns:GetCppXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q7="http://register.nhn.no/Common" element="q7:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetAllCollaborationRoles_InputMessage">
+        <wsdl:part element="tns:GetAllCollaborationRoles" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetAllCollaborationRoles_OutputMessage">
+        <wsdl:part element="tns:GetAllCollaborationRolesResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetAllCollaborationRoles_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q8="http://register.nhn.no/Common" element="q8:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplate_InputMessage">
+        <wsdl:part element="tns:GetCppTemplate" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplate_OutputMessage">
+        <wsdl:part element="tns:GetCppTemplateResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplate_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q9="http://register.nhn.no/Common" element="q9:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplateXml_InputMessage">
+        <wsdl:part element="tns:GetCppTemplateXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplateXml_OutputMessage">
+        <wsdl:part element="tns:GetCppTemplateXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplateXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q10="http://register.nhn.no/Common" element="q10:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_DeleteCppTemplate_InputMessage">
+        <wsdl:part element="tns:DeleteCppTemplate" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_DeleteCppTemplate_OutputMessage">
+        <wsdl:part element="tns:DeleteCppTemplateResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_DeleteCppTemplate_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q11="http://register.nhn.no/Common" element="q11:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplates_InputMessage">
+        <wsdl:part element="tns:GetCppTemplates" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplates_OutputMessage">
+        <wsdl:part element="tns:GetCppTemplatesResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCppTemplates_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q12="http://register.nhn.no/Common" element="q12:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppTemplate_InputMessage">
+        <wsdl:part element="tns:CreateCppTemplate" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppTemplate_OutputMessage">
+        <wsdl:part element="tns:CreateCppTemplateResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_CreateCppTemplate_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q13="http://register.nhn.no/Common" element="q13:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpa_InputMessage">
+        <wsdl:part element="tns:GetCpa" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpa_OutputMessage">
+        <wsdl:part element="tns:GetCpaResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpa_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q14="http://register.nhn.no/Common" element="q14:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaXml_InputMessage">
+        <wsdl:part element="tns:GetCpaXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaXml_OutputMessage">
+        <wsdl:part element="tns:GetCpaXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q15="http://register.nhn.no/Common" element="q15:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationParties_InputMessage">
+        <wsdl:part element="tns:GetCpaForCommunicationParties" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationParties_OutputMessage">
+        <wsdl:part element="tns:GetCpaForCommunicationPartiesResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationParties_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q16="http://register.nhn.no/Common" element="q16:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationPartiesXml_InputMessage">
+        <wsdl:part element="tns:GetCpaForCommunicationPartiesXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationPartiesXml_OutputMessage">
+        <wsdl:part element="tns:GetCpaForCommunicationPartiesXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpaForCommunicationPartiesXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q17="http://register.nhn.no/Common" element="q17:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationParty_InputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationParty" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationParty_OutputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationParty_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q18="http://register.nhn.no/Common" element="q18:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyCreatedAfter_InputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyCreatedAfter" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyCreatedAfter_OutputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyCreatedAfterResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message
+            name="ICPPAService_GetCpasForCommunicationPartyCreatedAfter_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q19="http://register.nhn.no/Common" element="q19:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyForApproval_InputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyForApproval" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyForApproval_OutputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyForApprovalResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message
+            name="ICPPAService_GetCpasForCommunicationPartyForApproval_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q20="http://register.nhn.no/Common" element="q20:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_InputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyForApprovalUnfiltered" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_OutputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyForApprovalUnfilteredResponse"
+                   name="parameters"/>
+    </wsdl:message>
+    <wsdl:message
+            name="ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q21="http://register.nhn.no/Common" element="q21:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyXml_InputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyXml" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyXml_OutputMessage">
+        <wsdl:part element="tns:GetCpasForCommunicationPartyXmlResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetCpasForCommunicationPartyXml_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q22="http://register.nhn.no/Common" element="q22:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetRevocatedCpas_InputMessage">
+        <wsdl:part element="tns:GetRevocatedCpas" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetRevocatedCpas_OutputMessage">
+        <wsdl:part element="tns:GetRevocatedCpasResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetRevocatedCpas_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q23="http://register.nhn.no/Common" element="q23:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RevokeCpa_InputMessage">
+        <wsdl:part element="tns:RevokeCpa" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RevokeCpa_OutputMessage">
+        <wsdl:part element="tns:RevokeCpaResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RevokeCpa_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q24="http://register.nhn.no/Common" element="q24:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveCpa_InputMessage">
+        <wsdl:part element="tns:ApproveCpa" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveCpa_OutputMessage">
+        <wsdl:part element="tns:ApproveCpaResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveCpa_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q25="http://register.nhn.no/Common" element="q25:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveAndUpdateCpa_InputMessage">
+        <wsdl:part element="tns:ApproveAndUpdateCpa" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveAndUpdateCpa_OutputMessage">
+        <wsdl:part element="tns:ApproveAndUpdateCpaResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_ApproveAndUpdateCpa_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q26="http://register.nhn.no/Common" element="q26:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_AddProcessToCpp_InputMessage">
+        <wsdl:part element="tns:AddProcessToCpp" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_AddProcessToCpp_OutputMessage">
+        <wsdl:part element="tns:AddProcessToCppResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_AddProcessToCpp_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q27="http://register.nhn.no/Common" element="q27:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RemoveProcessFromCpp_InputMessage">
+        <wsdl:part element="tns:RemoveProcessFromCpp" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RemoveProcessFromCpp_OutputMessage">
+        <wsdl:part element="tns:RemoveProcessFromCppResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_RemoveProcessFromCpp_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q28="http://register.nhn.no/Common" element="q28:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetProcessesInCpp_InputMessage">
+        <wsdl:part element="tns:GetProcessesInCpp" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetProcessesInCpp_OutputMessage">
+        <wsdl:part element="tns:GetProcessesInCppResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ICPPAService_GetProcessesInCpp_GenericFaultFault_FaultMessage">
+        <wsdl:part xmlns:q29="http://register.nhn.no/Common" element="q29:GenericFault" name="detail"/>
+    </wsdl:message>
+    <wsdl:portType name="ICPPAService">
+        <wsdl:operation name="GetCpp">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpp_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpp_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpp"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpp_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppForCommunicationParty">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppForCommunicationParty_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationPartyGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppForCommunicationParty_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationParty"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppForCommunicationParty_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppForCommunicationPartyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCpp">
+            <wsdl:fault
+                    message="tns:ICPPAService_CreateCpp_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_CreateCpp_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCpp"/>
+            <wsdl:output
+                    message="tns:ICPPAService_CreateCpp_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppForProcesses">
+            <wsdl:fault
+                    message="tns:ICPPAService_CreateCppForProcesses_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcessesGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_CreateCppForProcesses_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcesses"/>
+            <wsdl:output
+                    message="tns:ICPPAService_CreateCppForProcesses_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppForProcessesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_CreateCppXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_CreateCppXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_CreateCppXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXmlForCommunicationParty">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppXmlForCommunicationParty_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationPartyGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppXmlForCommunicationParty_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationParty"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppXmlForCommunicationParty_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlForCommunicationPartyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAllCollaborationRoles">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetAllCollaborationRoles_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRolesGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetAllCollaborationRoles_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRoles"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetAllCollaborationRoles_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetAllCollaborationRolesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplate">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppTemplate_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppTemplate_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplate"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppTemplate_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplateXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppTemplateXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppTemplateXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppTemplateXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplateXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCppTemplate">
+            <wsdl:fault
+                    message="tns:ICPPAService_DeleteCppTemplate_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplateGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_DeleteCppTemplate_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplate"/>
+            <wsdl:output
+                    message="tns:ICPPAService_DeleteCppTemplate_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/DeleteCppTemplateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCppTemplates">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCppTemplates_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplatesGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCppTemplates_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplates"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCppTemplates_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCppTemplatesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCppTemplate">
+            <wsdl:fault
+                    message="tns:ICPPAService_CreateCppTemplate_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplateGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_CreateCppTemplate_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplate"/>
+            <wsdl:output
+                    message="tns:ICPPAService_CreateCppTemplate_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/CreateCppTemplateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpa">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpa_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpa_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpa"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpa_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpaXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpaXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpaXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationParties">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpaForCommunicationParties_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpaForCommunicationParties_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationParties"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpaForCommunicationParties_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpaForCommunicationPartiesXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpaForCommunicationPartiesXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpaForCommunicationPartiesXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpaForCommunicationPartiesXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpaForCommunicationPartiesXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationParty">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpasForCommunicationParty_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpasForCommunicationParty_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationParty"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpasForCommunicationParty_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyCreatedAfter">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyCreatedAfter_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfterGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyCreatedAfter_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfter"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyCreatedAfter_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyCreatedAfterResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApproval">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApproval_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApproval_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApproval"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApproval_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyForApprovalUnfiltered">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfilteredGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfiltered"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyForApprovalUnfiltered_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyForApprovalUnfilteredResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCpasForCommunicationPartyXml">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyXml_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXmlGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyXml_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXml"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetCpasForCommunicationPartyXml_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetCpasForCommunicationPartyXmlResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetRevocatedCpas">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetRevocatedCpas_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpasGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetRevocatedCpas_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpas"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetRevocatedCpas_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetRevocatedCpasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="RevokeCpa">
+            <wsdl:fault
+                    message="tns:ICPPAService_RevokeCpa_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpaGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_RevokeCpa_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpa"/>
+            <wsdl:output
+                    message="tns:ICPPAService_RevokeCpa_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RevokeCpaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveCpa">
+            <wsdl:fault
+                    message="tns:ICPPAService_ApproveCpa_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpaGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_ApproveCpa_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpa"/>
+            <wsdl:output
+                    message="tns:ICPPAService_ApproveCpa_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveCpaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="ApproveAndUpdateCpa">
+            <wsdl:fault
+                    message="tns:ICPPAService_ApproveAndUpdateCpa_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpaGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_ApproveAndUpdateCpa_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpa"/>
+            <wsdl:output
+                    message="tns:ICPPAService_ApproveAndUpdateCpa_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/ApproveAndUpdateCpaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="AddProcessToCpp">
+            <wsdl:fault
+                    message="tns:ICPPAService_AddProcessToCpp_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCppGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_AddProcessToCpp_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCpp"/>
+            <wsdl:output
+                    message="tns:ICPPAService_AddProcessToCpp_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/AddProcessToCppResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="RemoveProcessFromCpp">
+            <wsdl:fault
+                    message="tns:ICPPAService_RemoveProcessFromCpp_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCppGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_RemoveProcessFromCpp_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCpp"/>
+            <wsdl:output
+                    message="tns:ICPPAService_RemoveProcessFromCpp_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/RemoveProcessFromCppResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetProcessesInCpp">
+            <wsdl:fault
+                    message="tns:ICPPAService_GetProcessesInCpp_GenericFaultFault_FaultMessage"
+                    name="GenericFaultFault"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCppGenericFaultFault"/>
+            <wsdl:input
+                    message="tns:ICPPAService_GetProcessesInCpp_InputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCpp"/>
+            <wsdl:output
+                    message="tns:ICPPAService_GetProcessesInCpp_OutputMessage"
+                    wsam:Action="http://schemas.nhn.no/reg/CollaborationProtocolProfile/ICPPAService/GetProcessesInCppResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:service name="CppaService">
+        <wsdl:port binding="tns:WSHttpBinding_ICPPAService" name="WSHttpBinding_ICPPAService">
+            <soap12:address location="https://ws-web.test.nhn.no/v1/CPPA"/>
+            <wsa10:EndpointReference>
+                <wsa10:Address>https://ws-web.test.nhn.no/v1/CPPA</wsa10:Address>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+        <wsdl:port binding="tns:NetTcpBinding_ICPPAService" name="NetTcpBinding_ICPPAService">
+            <soap12:address location="net.tcp://ws-web.test.nhn.no:9876/v1/CPPA"/>
+            <wsa10:EndpointReference>
+                <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <Dns>ws-web.test.nhn.no</Dns>
+                </Identity>
+                <wsa10:Address>net.tcp://ws-web.test.nhn.no:9876/v1/CPPA</wsa10:Address>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+        <wsdl:port binding="tns:BasicHttpBinding_ICPPAService" name="BasicHttpBinding_ICPPAService">
+            <soap:address location="https://ws-web.test.nhn.no/v1/CPPA/Basic"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:types>
+        <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   elementFormDefault="qualified"
+                   targetNamespace="http://schemas.nhn.no/reg/CollaborationProtocolProfile">
+            <xs:complexType name="CollaborationProtocolProfile">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid"/>
+                    <xs:element xmlns:q2="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="PartyInfo" nillable="true"
+                                type="q2:PartyInfo"/>
+                    <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ValidTo" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PartyInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="HerId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="PartyName" nillable="true" type="xs:string"/>
+                    <xs:element xmlns:q4="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="Certificates" nillable="true"
+                                type="q4:ArrayOfCertificate"/>
+                    <xs:element xmlns:q5="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="DeliveryChannels" nillable="true"
+                                type="q5:ArrayOfDeliveryChannel"/>
+                    <xs:element xmlns:q6="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="CollaborationRoles"
+                                nillable="true"
+                                type="q6:ArrayOfCollaborationRole"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCertificate">
+                <xs:sequence>
+                    <xs:element xmlns:q8="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="Certificate"
+                                nillable="true"
+                                type="q8:Certificate"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Certificate">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string"/>
+                    <xs:element
+                            xmlns:q10="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates"
+                            minOccurs="0" name="X509Certificate" nillable="true"
+                            type="q10:X509Certificate2"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfDeliveryChannel">
+                <xs:sequence>
+                    <xs:element xmlns:q12="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="DeliveryChannel"
+                                nillable="true"
+                                type="q12:DeliveryChannel"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DeliveryChannel">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string"/>
+                    <xs:element xmlns:q14="http://register.nhn.no/Common" minOccurs="0" name="ChannelType"
+                                nillable="true"
+                                type="q14:Code"/>
+                    <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string"/>
+                    <xs:element xmlns:q15="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="RetrySettingsReceiver" nillable="true"
+                                type="q15:RetrySettings"/>
+                    <xs:element xmlns:q16="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="RetrySettingsSender" nillable="true"
+                                type="q16:RetrySettings"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RetrySettings">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="DocExchangeId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+                    <xs:element minOccurs="0" name="PersistDuration" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Retries" type="xs:int"/>
+                    <xs:element minOccurs="0" name="RetryInterval" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCollaborationRole">
+                <xs:sequence>
+                    <xs:element xmlns:q19="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="CollaborationRole"
+                                nillable="true"
+                                type="q19:CollaborationRole"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CollaborationRole">
+                <xs:sequence>
+                    <xs:element xmlns:q21="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="CanReceive" nillable="true"
+                                type="q21:ArrayOfMessage"/>
+                    <xs:element xmlns:q22="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="CanSend" nillable="true"
+                                type="q22:ArrayOfMessage"/>
+                    <xs:element minOccurs="0" name="EncryptionCertificateId" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+                    <xs:element xmlns:q23="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="ProcessSpecification"
+                                nillable="true"
+                                type="q23:ProcessSpecification"/>
+                    <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="SignatureCertificateId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfMessage">
+                <xs:sequence>
+                    <xs:element xmlns:q25="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="Message" nillable="true"
+                                type="q25:Message"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Message">
+                <xs:sequence>
+                    <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                minOccurs="0"
+                                name="DeliveryChannelIds" nillable="true"
+                                type="q27:ArrayOfstring"/>
+                    <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OtherPartyMessageId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProcessSpecification">
+                <xs:sequence>
+                    <xs:element xmlns:q29="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="ChannelMessageCombinations"
+                                nillable="true"
+                                type="q29:ArrayOfChannelMessagesCombination"/>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Uuid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfChannelMessagesCombination">
+                <xs:sequence>
+                    <xs:element xmlns:q31="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="ChannelMessagesCombination"
+                                nillable="true"
+                                type="q31:ChannelMessagesCombination"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ChannelMessagesCombination">
+                <xs:sequence>
+                    <xs:element xmlns:q33="http://register.nhn.no/Common" minOccurs="0" name="ChannelType"
+                                nillable="true"
+                                type="q33:Code"/>
+                    <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                minOccurs="0"
+                                name="MessageIds" nillable="true"
+                                type="q34:ArrayOfstring"/>
+                    <xs:element minOccurs="0" name="RetrySettingsId" type="ser:guid"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCollaborationProtocolProfile">
+                <xs:sequence>
+                    <xs:element xmlns:q45="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="CollaborationProtocolProfile"
+                                nillable="true"
+                                type="q45:CollaborationProtocolProfile"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CpaDetails">
+                <xs:sequence>
+                    <xs:element xmlns:q49="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="CollaborationProtocolAgreement"
+                                nillable="true"
+                                type="q49:CollaborationProtocolAgreement"/>
+                    <xs:element xmlns:q50="http://register.nhn.no/Common" minOccurs="0" name="Status"
+                                nillable="true"
+                                type="q50:Code"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CollaborationProtocolAgreement">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ApprovedByPartyA" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="ApprovedByPartyB" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+                    <xs:element xmlns:q52="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="PartyA" nillable="true"
+                                type="q52:PartyInfo"/>
+                    <xs:element xmlns:q53="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                minOccurs="0"
+                                name="PartyB" nillable="true"
+                                type="q53:PartyInfo"/>
+                    <xs:element minOccurs="0" name="Revoked" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="ValidTo" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CpaXmlDetails">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CollaborationProtocolAgreementXml" nillable="true"
+                                type="xs:string"/>
+                    <xs:element xmlns:q56="http://register.nhn.no/Common" minOccurs="0" name="Status"
+                                nillable="true"
+                                type="q56:Code"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCpaDetails">
+                <xs:sequence>
+                    <xs:element xmlns:q61="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="CpaDetails"
+                                nillable="true"
+                                type="q61:CpaDetails"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCpaXmlDetails">
+                <xs:sequence>
+                    <xs:element xmlns:q67="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="CpaXmlDetails"
+                                nillable="true"
+                                type="q67:CpaXmlDetails"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCollaborationRoleIdentifier">
+                <xs:sequence>
+                    <xs:element xmlns:q73="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                maxOccurs="unbounded"
+                                minOccurs="0" name="CollaborationRoleIdentifier"
+                                nillable="true"
+                                type="q73:CollaborationRoleIdentifier"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CollaborationRoleIdentifier">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ProcessSpecificationUuid" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" name="ProcessSpecificationVersion" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="GetCpp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cppId" type="ser:guid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q1="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCppResult"
+                                    nillable="true"
+                                    type="q1:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q3="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CollaborationProtocolProfile" nillable="true"
+                        type="q3:CollaborationProtocolProfile"/>
+            <xs:element xmlns:q7="http://schemas.nhn.no/reg/CollaborationProtocolProfile" name="PartyInfo"
+                        nillable="true"
+                        type="q7:PartyInfo"/>
+            <xs:element xmlns:q9="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCertificate"
+                        nillable="true"
+                        type="q9:ArrayOfCertificate"/>
+            <xs:element xmlns:q11="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="Certificate"
+                        nillable="true"
+                        type="q11:Certificate"/>
+            <xs:element xmlns:q13="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfDeliveryChannel"
+                        nillable="true"
+                        type="q13:ArrayOfDeliveryChannel"/>
+            <xs:element xmlns:q17="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="DeliveryChannel"
+                        nillable="true"
+                        type="q17:DeliveryChannel"/>
+            <xs:element xmlns:q18="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="RetrySettings"
+                        nillable="true"
+                        type="q18:RetrySettings"/>
+            <xs:element xmlns:q20="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCollaborationRole" nillable="true"
+                        type="q20:ArrayOfCollaborationRole"/>
+            <xs:element xmlns:q24="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CollaborationRole"
+                        nillable="true"
+                        type="q24:CollaborationRole"/>
+            <xs:element xmlns:q26="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfMessage"
+                        nillable="true"
+                        type="q26:ArrayOfMessage"/>
+            <xs:element xmlns:q28="http://schemas.nhn.no/reg/CollaborationProtocolProfile" name="Message"
+                        nillable="true"
+                        type="q28:Message"/>
+            <xs:element xmlns:q30="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ProcessSpecification"
+                        nillable="true"
+                        type="q30:ProcessSpecification"/>
+            <xs:element xmlns:q32="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfChannelMessagesCombination"
+                        nillable="true"
+                        type="q32:ArrayOfChannelMessagesCombination"/>
+            <xs:element xmlns:q35="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ChannelMessagesCombination" nillable="true"
+                        type="q35:ChannelMessagesCombination"/>
+            <xs:element name="GetCppForCommunicationParty">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppForCommunicationPartyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q36="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCppForCommunicationPartyResult"
+                                    nillable="true"
+                                    type="q36:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCpp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q37="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="cpp" nillable="true"
+                                    type="q37:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q38="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="CreateCppResult"
+                                    nillable="true"
+                                    type="q38:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppForProcesses">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element
+                                xmlns:q39="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"
+                                minOccurs="0" name="cppp"
+                                nillable="true"
+                                type="q39:CollaborationProtocolProfileParameters"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppForProcessesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q40="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="CreateCppForProcessesResult"
+                                    nillable="true"
+                                    type="q40:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cppXml" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q41="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="CreateCppXmlResult"
+                                    nillable="true"
+                                    type="q41:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppXmlForCommunicationParty">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppXmlForCommunicationPartyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="GetCppXmlForCommunicationPartyResult" nillable="true"
+                                    type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cppId" type="ser:guid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="GetCppXmlResult" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetAllCollaborationRoles">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetAllCollaborationRolesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q42="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetAllCollaborationRolesResult"
+                                    nillable="true"
+                                    type="q42:ArrayOfCollaborationRole"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q43="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCppTemplateResult"
+                                    nillable="true"
+                                    type="q43:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplateXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplateXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="GetCppTemplateXmlResult" nillable="true"
+                                    type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="DeleteCppTemplate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="DeleteCppTemplateResponse">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplates">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCppTemplatesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q44="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCppTemplatesResult"
+                                    nillable="true"
+                                    type="q44:ArrayOfCollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q46="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCollaborationProtocolProfile"
+                        nillable="true"
+                        type="q46:ArrayOfCollaborationProtocolProfile"/>
+            <xs:element name="CreateCppTemplate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q47="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="cpp" nillable="true"
+                                    type="q47:CollaborationProtocolProfile"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CreateCppTemplateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="CreateCppTemplateResult" nillable="true"
+                                    type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cpaId" type="ser:guid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q48="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpaResult" nillable="true"
+                                    type="q48:CpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q51="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CpaDetails"
+                        nillable="true"
+                        type="q51:CpaDetails"/>
+            <xs:element xmlns:q54="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CollaborationProtocolAgreement" nillable="true"
+                        type="q54:CollaborationProtocolAgreement"/>
+            <xs:element name="GetCpaXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cpaId" type="ser:guid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpaXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q55="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpaXmlResult" nillable="true"
+                                    type="q55:CpaXmlDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q57="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CpaXmlDetails"
+                        nillable="true"
+                        type="q57:CpaXmlDetails"/>
+            <xs:element name="GetCpaForCommunicationParties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="communicationPartAHerId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="communicationPartBHerId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpaForCommunicationPartiesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q58="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpaForCommunicationPartiesResult"
+                                    nillable="true"
+                                    type="q58:CpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpaForCommunicationPartiesXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="communicationPartAHerId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="communicationPartBHerId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpaForCommunicationPartiesXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q59="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpaForCommunicationPartiesXmlResult"
+                                    nillable="true"
+                                    type="q59:CpaXmlDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationParty">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q60="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpasForCommunicationPartyResult"
+                                    nillable="true"
+                                    type="q60:ArrayOfCpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q62="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCpaDetails"
+                        nillable="true"
+                        type="q62:ArrayOfCpaDetails"/>
+            <xs:element name="GetCpasForCommunicationPartyCreatedAfter">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="createdOnOrAfter" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyCreatedAfterResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q63="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpasForCommunicationPartyCreatedAfterResult"
+                                    nillable="true"
+                                    type="q63:ArrayOfCpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyForApproval">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyForApprovalResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q64="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpasForCommunicationPartyForApprovalResult"
+                                    nillable="true"
+                                    type="q64:ArrayOfCpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyForApprovalUnfiltered">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyForApprovalUnfilteredResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q65="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpasForCommunicationPartyForApprovalUnfilteredResult" nillable="true"
+                                    type="q65:ArrayOfCpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyXml">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetCpasForCommunicationPartyXmlResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q66="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="GetCpasForCommunicationPartyXmlResult"
+                                    nillable="true"
+                                    type="q66:ArrayOfCpaXmlDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q68="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCpaXmlDetails"
+                        nillable="true"
+                        type="q68:ArrayOfCpaXmlDetails"/>
+            <xs:element name="GetRevocatedCpas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                        <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+                        <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetRevocatedCpasResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                    minOccurs="0"
+                                    name="GetRevocatedCpasResult" nillable="true"
+                                    type="q69:ArrayOfguid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RevokeCpa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cpaId" type="ser:guid"/>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RevokeCpaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q70="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="RevokeCpaResult" nillable="true"
+                                    type="q70:CpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ApproveCpa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cpaId" type="ser:guid"/>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ApproveCpaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q71="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="ApproveCpaResult" nillable="true"
+                                    type="q71:CpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ApproveAndUpdateCpa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cpaId" type="ser:guid"/>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                        <xs:element xmlns:q72="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="approvedRoles"
+                                    nillable="true"
+                                    type="q72:ArrayOfCollaborationRoleIdentifier"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element xmlns:q74="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="ArrayOfCollaborationRoleIdentifier"
+                        nillable="true"
+                        type="q74:ArrayOfCollaborationRoleIdentifier"/>
+            <xs:element xmlns:q75="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                        name="CollaborationRoleIdentifier" nillable="true"
+                        type="q75:CollaborationRoleIdentifier"/>
+            <xs:element name="ApproveAndUpdateCpaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element xmlns:q76="http://schemas.nhn.no/reg/CollaborationProtocolProfile"
+                                    minOccurs="0"
+                                    name="ApproveAndUpdateCpaResult" nillable="true"
+                                    type="q76:CpaDetails"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AddProcessToCpp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element
+                                xmlns:q77="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"
+                                minOccurs="0" name="processParameter" nillable="true"
+                                type="q77:ProcessParameter"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AddProcessToCppResponse">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RemoveProcessFromCpp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element
+                                xmlns:q78="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"
+                                minOccurs="0" name="processParameter" nillable="true"
+                                type="q78:ProcessParameter"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RemoveProcessFromCppResponse">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetProcessesInCpp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="herId" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetProcessesInCppResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element
+                                xmlns:q79="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"
+                                minOccurs="0" name="GetProcessesInCppResult"
+                                nillable="true"
+                                type="q79:ArrayOfProcessParameter"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+            <xs:import
+                    namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates"/>
+            <xs:import namespace="http://register.nhn.no/Common"/>
+            <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+            <xs:import
+                    namespace="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"/>
+        </xs:schema>
+        <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   attributeFormDefault="qualified"
+                   elementFormDefault="qualified"
+                   targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/">
+            <xs:attribute name="FactoryType" type="xs:QName"/>
+            <xs:attribute name="Id" type="xs:ID"/>
+            <xs:attribute name="Ref" type="xs:IDREF"/>
+            <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+            <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+            <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+            <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+            <xs:element name="byte" nillable="true" type="xs:byte"/>
+            <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+            <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+            <xs:element name="double" nillable="true" type="xs:double"/>
+            <xs:element name="float" nillable="true" type="xs:float"/>
+            <xs:element name="int" nillable="true" type="xs:int"/>
+            <xs:element name="long" nillable="true" type="xs:long"/>
+            <xs:element name="QName" nillable="true" type="xs:QName"/>
+            <xs:element name="short" nillable="true" type="xs:short"/>
+            <xs:element name="string" nillable="true" type="xs:string"/>
+            <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+            <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+            <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+            <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+            <xs:element name="char" nillable="true" type="tns:char"/>
+            <xs:element name="duration" nillable="true" type="tns:duration"/>
+            <xs:element name="guid" nillable="true" type="tns:guid"/>
+            <xs:simpleType name="char">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:simpleType name="duration">
+                <xs:restriction base="xs:duration">
+                    <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+                    <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+                    <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="guid">
+                <xs:restriction base="xs:string">
+                    <xs:pattern
+                            value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+        <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:tns="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   elementFormDefault="qualified"
+                   targetNamespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates">
+            <xs:complexType name="X509Certificate2">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:X509Certificate"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="X509Certificate">
+                <xs:attribute ref="ser:FactoryType"/>
+                <xs:sequence>
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##local" processContents="skip"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="X509Certificate2" nillable="true" type="tns:X509Certificate2"/>
+            <xs:element name="X509Certificate" nillable="true" type="tns:X509Certificate"/>
+            <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        </xs:schema>
+        <xs:schema xmlns:tns="http://register.nhn.no/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   elementFormDefault="qualified" targetNamespace="http://register.nhn.no/Common">
+            <xs:complexType name="Code">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Active" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="CodeText" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OID" type="xs:int"/>
+                    <xs:element minOccurs="0" name="SimpleType" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GenericFault">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Code" nillable="true" type="tns:Code"/>
+            <xs:element name="GenericFault" nillable="true" type="tns:GenericFault"/>
+        </xs:schema>
+        <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   elementFormDefault="qualified"
+                   targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <xs:complexType name="ArrayOfstring">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true"
+                                type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfguid">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="guid" type="ser:guid"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+            <xs:element name="ArrayOfguid" nillable="true" type="tns:ArrayOfguid"/>
+            <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        </xs:schema>
+        <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:tns="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   elementFormDefault="qualified"
+                   targetNamespace="http://schemas.datacontract.org/2004/07/NHN.Palantir.WebServices.Contracts.CPPA.Data">
+            <xs:complexType name="CollaborationProtocolProfileParameters">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="HerId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Processes" nillable="true" type="tns:ArrayOfProcess"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfProcess">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Process" nillable="true"
+                                type="tns:Process"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Process">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Channels" nillable="true" type="tns:ArrayOfChannel"/>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole"/>
+                    <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfChannel">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Channel" nillable="true"
+                                type="tns:Channel"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Channel">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfRole">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Role" nillable="true"
+                                type="tns:Role"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Role">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProcessParameter">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="HerId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Process" nillable="true" type="tns:ProcessWithGuid"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProcessWithGuid">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Channels" nillable="true" type="tns:ArrayOfChannel"/>
+                    <xs:element minOccurs="0" name="Guid" type="ser:guid"/>
+                    <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole"/>
+                    <xs:element minOccurs="0" name="VersionNumber" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfProcessParameter">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ProcessParameter" nillable="true"
+                                type="tns:ProcessParameter"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="CollaborationProtocolProfileParameters" nillable="true"
+                        type="tns:CollaborationProtocolProfileParameters"/>
+            <xs:element name="ArrayOfProcess" nillable="true" type="tns:ArrayOfProcess"/>
+            <xs:element name="Process" nillable="true" type="tns:Process"/>
+            <xs:element name="ArrayOfChannel" nillable="true" type="tns:ArrayOfChannel"/>
+            <xs:element name="Channel" nillable="true" type="tns:Channel"/>
+            <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole"/>
+            <xs:element name="Role" nillable="true" type="tns:Role"/>
+            <xs:element name="ProcessParameter" nillable="true" type="tns:ProcessParameter"/>
+            <xs:element name="ProcessWithGuid" nillable="true" type="tns:ProcessWithGuid"/>
+            <xs:element name="ArrayOfProcessParameter" nillable="true"
+                        type="tns:ArrayOfProcessParameter"/>
+            <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsp:Policy wsu:Id="WSHttpBinding_ICPPAService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <wsam:Addressing>
+                    <wsp:Policy>
+                        <wsam:AnonymousResponses/>
+                    </wsp:Policy>
+                </wsam:Addressing>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="NetTcpBinding_ICPPAService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <msb:BinaryEncoding
+                        xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1"/>
+                <sp:EndorsingSupportingTokens
+                        xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:SecureConversationToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:BootstrapPolicy>
+                                    <wsp:Policy>
+                                        <sp:EncryptedParts>
+                                            <sp:Body/>
+                                        </sp:EncryptedParts>
+                                        <sp:SignedParts>
+                                            <sp:Body/>
+                                            <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="MessageID"
+                                                       Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="RelatesTo"
+                                                       Namespace="http://www.w3.org/2005/08/addressing"/>
+                                            <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                        </sp:SignedParts>
+                                        <sp:SignedSupportingTokens>
+                                            <wsp:Policy>
+                                                <sp:UsernameToken
+                                                        sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                                                    <wsp:Policy>
+                                                        <sp:WssUsernameToken10/>
+                                                    </wsp:Policy>
+                                                </sp:UsernameToken>
+                                            </wsp:Policy>
+                                        </sp:SignedSupportingTokens>
+                                        <sp:TransportBinding>
+                                            <wsp:Policy>
+                                                <sp:AlgorithmSuite>
+                                                    <wsp:Policy>
+                                                        <sp:Basic256/>
+                                                    </wsp:Policy>
+                                                </sp:AlgorithmSuite>
+                                                <sp:IncludeTimestamp/>
+                                                <sp:Layout>
+                                                    <wsp:Policy>
+                                                        <sp:Strict/>
+                                                    </wsp:Policy>
+                                                </sp:Layout>
+                                                <sp:TransportToken>
+                                                    <wsp:Policy>
+                                                        <msf:SslTransportSecurity
+                                                                xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy"/>
+                                                    </wsp:Policy>
+                                                </sp:TransportToken>
+                                            </wsp:Policy>
+                                        </sp:TransportBinding>
+                                        <sp:Trust10>
+                                            <wsp:Policy>
+                                                <sp:MustSupportIssuedTokens/>
+                                                <sp:RequireClientEntropy/>
+                                                <sp:RequireServerEntropy/>
+                                            </wsp:Policy>
+                                        </sp:Trust10>
+                                        <sp:Wss11>
+                                            <wsp:Policy/>
+                                        </sp:Wss11>
+                                    </wsp:Policy>
+                                </sp:BootstrapPolicy>
+                            </wsp:Policy>
+                        </sp:SecureConversationToken>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:IncludeTimestamp/>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <msf:SslTransportSecurity
+                                        xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportIssuedTokens/>
+                        <sp:RequireClientEntropy/>
+                        <sp:RequireServerEntropy/>
+                    </wsp:Policy>
+                </sp:Trust10>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss11>
+                <wsam:Addressing>
+                    <wsp:Policy>
+                        <wsam:AnonymousResponses/>
+                    </wsp:Policy>
+                </wsam:Addressing>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="BasicHttpBinding_ICPPAService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>
