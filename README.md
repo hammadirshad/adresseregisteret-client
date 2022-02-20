@@ -1,2 +1,2 @@
-# adresseregisteret-client
-Norsk Helsenett NHN Grunndata Adresseregisteret Client
+# Norsk Helsenett NHN Grunndata Adresseregisteret Client
+
