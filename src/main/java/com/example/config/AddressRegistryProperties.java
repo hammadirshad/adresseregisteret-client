@@ -16,20 +16,26 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("address.registry")
 public class AddressRegistryProperties {
 
-  /**
-   * Username used for connecting
-   */
-  private String username;
+    private RequestMode requestMode = RequestMode.HTTP;
+    /**
+     * Username used for connecting
+     */
+    private String username;
 
-  /**
-   * Password used for connecting
-   */
-  private String password;
+    /**
+     * Password used for connecting
+     */
+    private String password;
 
-  /**
-   * The endpoint found in the WCF configuration
-   */
-  private String arEndpoint;
+    /**
+     * The endpoint found in the WCF configuration
+     */
+    private String arEndpoint;
 
-  private String cppEndpoint;
+    private String cppEndpoint;
+
+    public enum RequestMode {
+        HTTP,
+        SOAP
+    }
 }

@@ -1,7 +1,7 @@
 package com.example.grunndata.cpp.service;
 
 import com.example.config.AddressRegistryProperties;
-import com.example.grunndata.GrundataWebServiceClient;
+import com.example.grunndata.GrunndataWebServiceClient;
 import com.example.schema.cpa.CollaborationProtocolAgreement;
 import com.example.schema.cpa.CollaborationProtocolProfile;
 import com.example.schema.cppa.*;
@@ -16,7 +16,7 @@ import org.springframework.ws.soap.client.SoapFaultClientException;
 public class CollaborationProtocolRegistrySoapService
         extends AbstractCollaborationProtocolRegistryRequest {
 
-    private final GrundataWebServiceClient grundataWebServiceClient;
+    private final GrunndataWebServiceClient grunndataWebServiceClient;
     private final AddressRegistryProperties registrySettings;
 
     /**
@@ -32,7 +32,7 @@ public class CollaborationProtocolRegistrySoapService
         try {
             GetCppXmlForCommunicationPartyResponse response =
                     (GetCppXmlForCommunicationPartyResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
@@ -68,7 +68,7 @@ public class CollaborationProtocolRegistrySoapService
         try {
             GetCpaForCommunicationPartiesXmlResponse response =
                     (GetCpaForCommunicationPartiesXmlResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),
@@ -104,7 +104,7 @@ public class CollaborationProtocolRegistrySoapService
         try {
             GetCpaXmlResponse response =
                     (GetCpaXmlResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     registrySettings.getCppEndpoint(),
                                     registrySettings.getUsername(),
                                     registrySettings.getPassword(),

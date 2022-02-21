@@ -1,7 +1,7 @@
 package com.example.grunndata.ar.service;
 
 import com.example.config.AddressRegistryProperties;
-import com.example.grunndata.GrundataWebServiceClient;
+import com.example.grunndata.GrunndataWebServiceClient;
 import com.example.schema.ar.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +11,7 @@ import org.springframework.ws.soap.client.SoapFaultClientException;
 @RequiredArgsConstructor
 public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRequest {
 
-    private final GrundataWebServiceClient grundataWebServiceClient;
+    private final GrunndataWebServiceClient grunndataWebServiceClient;
     private final AddressRegistryProperties addressRegistrySettings;
 
     public CertificateDetails getCertificateDetailsForEncryption(Integer herId) {
@@ -20,7 +20,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
         try {
             GetCertificateDetailsForEncryptionResponse response =
                     (GetCertificateDetailsForEncryptionResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),
@@ -41,7 +41,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
         try {
             GetCertificateDetailsForValidatingSignatureResponse response =
                     (GetCertificateDetailsForValidatingSignatureResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),
@@ -63,7 +63,7 @@ public class AddressRegistrySoapRequestService extends AbstractAddressRegistryRe
         try {
             GetCommunicationPartyDetailsResponse response =
                     (GetCommunicationPartyDetailsResponse)
-                            grundataWebServiceClient.sendRequest(
+                            grunndataWebServiceClient.sendRequest(
                                     addressRegistrySettings.getArEndpoint(),
                                     addressRegistrySettings.getUsername(),
                                     addressRegistrySettings.getPassword(),

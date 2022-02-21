@@ -1,5 +1,6 @@
 package com.example.grunndata;
 
+import com.example.config.AddressRegistryProperties;
 import com.example.schema.ar.GenericFault;
 import com.example.schema.envelope.Body;
 import com.example.schema.envelope.Envelope;
@@ -7,13 +8,27 @@ import com.example.schema.envelope.Fault;
 import com.example.utils.XMLUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import javax.xml.bind.JAXBElement;
+import java.util.Base64;
 import java.util.regex.Pattern;
 
-public interface AbstractGrundataRegistryRequest {
-    Logger log = LoggerFactory.getLogger(AbstractGrundataRegistryRequest.class);
+public interface AbstractGrunndataRegistryRequest {
+    Logger log = LoggerFactory.getLogger(AbstractGrunndataRegistryRequest.class);
+
+    default ResponseEntity<String> getResponseEntity(Object request, RestTemplate restTemplate, AddressRegistryProperties addressRegistryProperties, String soaAction) {
+        String soapEnvelope = getRequestEnvelope(request);
+        HttpEntity<String> requestEntity =
+                new HttpEntity<>(
+                        soapEnvelope, getHttpHeaders(request.getClass(), getBasicAuth(addressRegistryProperties), soaAction));
+        return restTemplate.exchange(
+                addressRegistryProperties.getCppEndpoint(), HttpMethod.POST, requestEntity, String.class);
+    }
 
     default String getRequestEnvelope(Object request) {
         Envelope envelope = new Envelope();
@@ -29,6 +44,13 @@ public interface AbstractGrundataRegistryRequest {
         httpHeaders.add("SOAPAction", soaAction + aClass.getSimpleName());
         httpHeaders.add(HttpHeaders.CONTENT_TYPE, "text/xml");
         return httpHeaders;
+    }
+
+    default String getBasicAuth(AddressRegistryProperties addressRegistryProperties) {
+        String authString =
+                addressRegistryProperties.getUsername() + ":" + addressRegistryProperties.getPassword();
+        byte[] authEncBytes = Base64.getEncoder().encode(authString.getBytes());
+        return new String(authEncBytes);
     }
 
     default String getSoapFault(String response) {

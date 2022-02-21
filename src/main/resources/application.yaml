@@ -1,5 +1,6 @@
 address:
   registry:
+    request-mode: http
     username:
     password:
     ar-endpoint: https://ws-web.test.nhn.no/v1/AR/Basic

@@ -10,10 +10,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
+@Slf4j
 @Service
 @Profile("default")
-@Slf4j
+@RequiredArgsConstructor
 public class StartupApplicationRunner implements ApplicationRunner {
     private final AddressRegistryService addressRegistryService;
     private final CollaborationProtocolRegistryService collaborationProtocolRegistry;
