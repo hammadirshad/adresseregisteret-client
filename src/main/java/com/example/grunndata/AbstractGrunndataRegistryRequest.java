@@ -27,7 +27,7 @@ public interface AbstractGrunndataRegistryRequest {
                 new HttpEntity<>(
                         soapEnvelope, getHttpHeaders(request.getClass(), getBasicAuth(addressRegistryProperties), soaAction));
         return restTemplate.exchange(
-                addressRegistryProperties.getCppEndpoint(), HttpMethod.POST, requestEntity, String.class);
+                addressRegistryProperties.getArEndpoint(), HttpMethod.POST, requestEntity, String.class);
     }
 
     default String getRequestEnvelope(Object request) {

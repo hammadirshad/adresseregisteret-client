@@ -34,7 +34,7 @@ public class CertificateValidator {
     }
 
     public CertificateErrors validateEncryptionCertificate(CertificateModel certificateModel) {
-        return validate(certificateModel.getCertificate(), keyUsageBitValue.dataEncipherment);
+        return validate(certificateModel.getCertificate(), keyUsageBitValue.dataEncipherment, keyUsageBitValue.keyEncipherment);
     }
 
     /**
@@ -44,7 +44,7 @@ public class CertificateValidator {
      *                    specified for
      * @return A status indicating if the certificate is valid or not
      */
-    public CertificateErrors validate(X509Certificate certificate, keyUsageBitValue keyUsageValue) {
+    public CertificateErrors validate(X509Certificate certificate, keyUsageBitValue... keyUsageValues) {
         if (certificate == null) {
             return CertificateErrors.Missing;
         }
@@ -63,7 +63,18 @@ public class CertificateValidator {
             for (String oid : criticalExtensionOIDs) {
                 if (KEY_USAGE_OID.equals(oid)) {
                     boolean[] keyUsage = certificate.getKeyUsage();
-                    if (keyUsage == null || !keyUsage[keyUsageValue.getBitValue()]) {
+                    if (keyUsage == null) {
+                        result = CertificateErrors.Usage;
+                        break;
+                    }
+                    boolean keyUsagefound = false;
+                    for (keyUsageBitValue keyUsageValue : keyUsageValues) {
+                        if (keyUsage[keyUsageValue.getBitValue()]) {
+                            keyUsagefound = true;
+                            break;
+                        }
+                    }
+                    if (!keyUsagefound) {
                         result = CertificateErrors.Usage;
                     }
                     break;
