@@ -30,11 +30,11 @@ public class CertificateValidator {
     private final ProxyProperties proxyProperties;
 
     public CertificateErrors validateSigningCertificate(CertificateModel certificateModel) {
-        return validate(certificateModel.getCertificate(), keyUsageBitValue.nonRepudiation);
+        return validate(certificateModel.getCertificate(), keyUsageBitValue.NON_REPUDIATION);
     }
 
     public CertificateErrors validateEncryptionCertificate(CertificateModel certificateModel) {
-        return validate(certificateModel.getCertificate(), keyUsageBitValue.dataEncipherment, keyUsageBitValue.keyEncipherment);
+        return validate(certificateModel.getCertificate(), keyUsageBitValue.KEY_ENCIPHERMENT);
     }
 
     /**
@@ -44,18 +44,18 @@ public class CertificateValidator {
      *                    specified for
      * @return A status indicating if the certificate is valid or not
      */
-    public CertificateErrors validate(X509Certificate certificate, keyUsageBitValue... keyUsageValues) {
+    public CertificateErrors validate(X509Certificate certificate, keyUsageBitValue keyUsageValue) {
         if (certificate == null) {
-            return CertificateErrors.Missing;
+            return CertificateErrors.MISSING;
         }
 
-        CertificateErrors result = CertificateErrors.None;
+        CertificateErrors result = CertificateErrors.NONE;
 
         if (new Date().before(certificate.getNotBefore())) {
-            result = CertificateErrors.StartDate;
+            result = CertificateErrors.BEFORE_START_DATE;
         }
         if (new Date().after(certificate.getNotAfter())) {
-            result = CertificateErrors.EndDate;
+            result = CertificateErrors.AFTER_END_DATE;
         }
 
         Set<String> criticalExtensionOIDs = certificate.getCriticalExtensionOIDs();
@@ -63,19 +63,8 @@ public class CertificateValidator {
             for (String oid : criticalExtensionOIDs) {
                 if (KEY_USAGE_OID.equals(oid)) {
                     boolean[] keyUsage = certificate.getKeyUsage();
-                    if (keyUsage == null) {
-                        result = CertificateErrors.Usage;
-                        break;
-                    }
-                    boolean keyUsagefound = false;
-                    for (keyUsageBitValue keyUsageValue : keyUsageValues) {
-                        if (keyUsage[keyUsageValue.getBitValue()]) {
-                            keyUsagefound = true;
-                            break;
-                        }
-                    }
-                    if (!keyUsagefound) {
-                        result = CertificateErrors.Usage;
+                    if (keyUsage == null || !keyUsage[keyUsageValue.getBitValue()]) {
+                        result = CertificateErrors.INCORRECT_USAGE;
                     }
                     break;
                 }
@@ -83,21 +72,15 @@ public class CertificateValidator {
         }
 
         if (certificateProperties.isRemoteValidation()) {
-            Proxy proxy = null;
-            if (proxyProperties.isEnabled()) {
-                InetSocketAddress sa =
-                        new InetSocketAddress(
-                                proxyProperties.getHost(), proxyProperties.getPort());
-                proxy = new Proxy(Proxy.Type.HTTP, sa);
-            }
+            Proxy proxy = getProxy(proxyProperties);
             X509CRL x509CRL = CertificateUtils.getCRL(certificate, proxy);
             if (x509CRL != null) {
                 boolean revoked = verify(x509CRL, certificate, new Date());
                 if (revoked) {
-                    result = CertificateErrors.Revoked;
+                    result = CertificateErrors.REVOKED;
                 }
             } else {
-                result = CertificateErrors.RevokedUnknown;
+                result = CertificateErrors.REVOKED_UNKNOWN;
             }
         }
         return result;
@@ -111,4 +94,15 @@ public class CertificateValidator {
         }
         return false;
     }
+
+    private Proxy getProxy(ProxyProperties proxyProperties) {
+        if (proxyProperties.isEnabled()) {
+            InetSocketAddress sa =
+                    new InetSocketAddress(
+                            proxyProperties.getHost(), proxyProperties.getPort());
+            return new Proxy(Proxy.Type.HTTP, sa);
+        }
+        return null;
+    }
+
 }
